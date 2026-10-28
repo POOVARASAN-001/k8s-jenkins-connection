@@ -4,7 +4,7 @@ pipeline {
 
     environment {
         KUBECTL = 'D:\\DockerApp\\resources\\bin\\kubectl.exe'
-        KUBECONFIG = 'C:\\Users\\YOUR_WINDOWS_USERNAME\\.kube\\config'
+        KUBECONFIG = 'C:\\Users\\C:\Users\POOVARASAN\.kube\config\\.kube\\config'
     }
 
     stages {
