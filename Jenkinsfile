@@ -2,19 +2,24 @@
 pipeline {
     agent any
 
+    environment {
+        KUBECTL = 'D:\\DockerApp\\resources\\bin\\kubectl.exe'
+        KUBECONFIG = 'C:\\Users\\YOUR_WINDOWS_USERNAME\\.kube\\config'
+    }
+
     stages {
         stage('Check kubectl') {
             steps {
-                bat 'kubectl version --client'
+                bat '"%KUBECTL%" version --client'
             }
         }
 
         stage('Verify Kubernetes Connection') {
             steps {
-                bat 'kubectl config current-context'
-                bat 'kubectl cluster-info'
-                bat 'kubectl get nodes'
-                bat 'kubectl get pods -A'
+                bat '"%KUBECTL%" config current-context'
+                bat '"%KUBECTL%" cluster-info'
+                bat '"%KUBECTL%" get nodes'
+                bat '"%KUBECTL%" get pods -A'
             }
         }
     }
